@@ -1,11 +1,26 @@
 class ItemsController < ApplicationController
+
   def index
     @items = Item.all
-    #Itemはモデルから全てデータを持ってくる意味
+    # Itemはモデルから全てデータを持ってくる意味
   end
 
-  def
+  def new
     @item = Item.new
+  end  
+
+  def create
+    Item create(item_params)
+    #	アイテムモデル保存する
   end
-  
-end  
+
+  private
+  def item_params
+    params.require(:item).permit(:name, :image)
+  end
+
+end
+
+
+
+
