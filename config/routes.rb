@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items
   # 7つのアクションをまとめる[:index, :new ,:create ,:destroy ,:edit ,:update, :show ]
+  resources :users, only: :show
 end
 
