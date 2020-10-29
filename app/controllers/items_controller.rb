@@ -2,6 +2,9 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:edit, :show]
   # privateで設定したset_itemを代入する
+  before_action :move_to_index, except: [:index, :show]
+  # index.html.erbページにリダイレクト
+  # ログインしていなくても、詳細ページに遷移できる仕様にするためにexcept: [:index, :show]としている
 
   def index
     @items = Item.all
@@ -42,6 +45,12 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Tweet.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 
 end
