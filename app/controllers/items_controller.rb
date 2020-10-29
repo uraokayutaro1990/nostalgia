@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:user)
-    # includesメソッドを使用したためallメソッドは省略
+    # includesメソッドを使用したためallメソッドは省略、N＋1問題解決2回のアクセスで済む
   end
 
   def new
@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :image, :text).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :text).merge(user_id: current_user.id)
     #アイテムの名前と写真だけを許可
     #mergeメソッドとは2つのハッシュを1つにする
   end
