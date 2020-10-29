@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
 
+  before_action :set_item, only: [:edit, :show]
+  # privateで設定したset_itemを代入する
+
   def index
     @items = Item.all
     # Itemはモデルから全てデータを持ってくる意味
@@ -21,7 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
@@ -30,13 +32,16 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
   end
 
   private
   def item_params
     params.require(:item).permit(:name, :image, :text)
     #アイテムの名前と写真だけを許可
+  end
+
+  def set_item
+    @item = Tweet.find(params[:id])
   end
 
 end
