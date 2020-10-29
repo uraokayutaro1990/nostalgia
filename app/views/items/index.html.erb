@@ -10,6 +10,9 @@
             <%# アイテムのID（item.id） %>
             <%# HTTPメソッドは、DELETEというHTTPメソッド %>
             <%# methodオプションにシンボルで:delete %>
+            <%= link_to '編集',edit_item_path(item.id), method: :get %>
+            <%# get サーバーからブラウザに情報を返す。単にウェブサイトを閲覧する際など、情報を取得するために利用される。 %>
+            <%# Prefixでパスを確認 %>
           </li>
         </ul> 
        </div>    
@@ -20,4 +23,5 @@
     </div>
   <% end %>  
 </div>
+
 
