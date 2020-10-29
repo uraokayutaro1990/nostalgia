@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :image)
+    #アイテムの名前と写真だけを許可
   end
 
 end
