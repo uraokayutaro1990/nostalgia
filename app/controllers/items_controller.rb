@@ -7,8 +7,8 @@ class ItemsController < ApplicationController
   # ログインしていなくても、詳細ページに遷移できる仕様にするためにexcept: [:index, :show]としている
 
   def index
-    @items = Item.all
-    # Itemはモデルから全てデータを持ってくる意味
+    @items = Item.includes(:user)
+    # includesメソッドを使用したためallメソッドは省略
   end
 
   def new
