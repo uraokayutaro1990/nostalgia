@@ -5,7 +5,10 @@
         <span><%= image_tag 'arrow_top.png'%></span>
         <ul class="more_list">
           <li>
-            <%= link_to'削除', item_path(item.id), method: :delete %>
+            <%= link_to '詳細', item_path(item.id), method: :get%>
+          </li>
+          <li>
+            <%= link_to '削除', item_path(item.id), method: :delete %>
             <%# Prefixの引数 %>
             <%# アイテムのID（item.id） %>
             <%# HTTPメソッドは、DELETEというHTTPメソッド %>
