@@ -39,8 +39,9 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :image, :text)
+    params.require(:item).permit(:name, :image, :text).merge(user_id: current_user.id)
     #アイテムの名前と写真だけを許可
+    #mergeメソッドとは2つのハッシュを1つにする
   end
 
   def set_item
