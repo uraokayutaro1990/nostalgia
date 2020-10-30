@@ -7,16 +7,20 @@
           <li>
             <%= link_to '詳細', item_path(item.id), method: :get%>
           </li>
+        <% if user_signed_in? && current_user.id == item.user_id %>
           <li>
             <%= link_to '削除', item_path(item.id), method: :delete %>
+          </li>
             <%# Prefixの引数 %>
             <%# アイテムのID（item.id） %>
             <%# HTTPメソッドは、DELETEというHTTPメソッド %>
             <%# methodオプションにシンボルで:delete %>
+          <li>
             <%= link_to '編集',edit_item_path(item.id), method: :get %>
             <%# get サーバーからブラウザに情報を返す。単にウェブサイトを閲覧する際など、情報を取得するために利用される。 %>
             <%# Prefixでパスを確認 %>
           </li>
+        <% end %>
         </ul> 
        </div>    
       <p><%= item.text %></p>
