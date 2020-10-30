@@ -60,6 +60,8 @@ class ItemsController < ApplicationController
 
 end
 
+# 画像の保存を許可するストロングパラメーター
+
 
 
 
