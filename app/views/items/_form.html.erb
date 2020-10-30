@@ -1,0 +1,6 @@
+<%= form_with(model: item, local: true) do |form| %>
+ <%# local: trueとはhHTMLとしてデータを送信する %>
+  <%= form.file_field :image %>
+  <%= form.text_area :text, placeholder: "text", rows: "10" %>
+  <%= form.submit "SEND" %>
+<% end %>
