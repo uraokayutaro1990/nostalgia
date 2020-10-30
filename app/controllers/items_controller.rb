@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
     @items = Item.includes(:user)
     # includesメソッドを使用したためallメソッドは省略、N＋1問題解決2回のアクセスで済む
   end
-
+    @items = Item.includes(:user).sample(10)
   def new
     @item = Item.new
   end  
