@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:edit, :show]
   # privateで設定したset_itemを代入する
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   # index.html.erbページにリダイレクト
   # ログインしていなくても、詳細ページに遷移できる仕様にするためにexcept: [:index, :show]としている
 
@@ -35,6 +35,10 @@ class ItemsController < ApplicationController
   end
   
   def show
+  end
+
+  def search
+    @items = Item.search(params[:keyword])
   end
 
   private
