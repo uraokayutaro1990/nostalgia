@@ -2,15 +2,16 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:edit, :show]
   # privateで設定したset_itemを代入する
+  # あとでマイページをランダムで表示できるように
   before_action :move_to_index, except: [:index, :show, :search]
   # index.html.erbページにリダイレクト
   # ログインしていなくても、詳細ページに遷移できる仕様にするためにexcept: [:index, :show]としている
 
   def index
-    @items = Item.includes(:user)
+    @items = Item.includes(:user).sample(10)
     # includesメソッドを使用したためallメソッドは省略、N＋1問題解決2回のアクセスで済む
   end
-    @items = Item.includes(:user).sample(10)
+    @items = Item.includes(:user)
   def new
     @item = Item.new
   end  
@@ -43,7 +44,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:image, :text).merge(user_id: current_user.id)
+    params.require(:item).permit(:text, :image ).merge(user_id: current_user.id)
     #アイテムの名前と写真だけを許可
     #mergeメソッドとは2つのハッシュを1つにする
   end
