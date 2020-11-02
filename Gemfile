@@ -54,3 +54,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 gem 'devise'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+
+# mini_magickとはImageMagickの機能をRubyで扱えるようにしてくれる
+# ImageProcessing、MiniMagickでは提供できない、画像サイズを調整する機能を提供する
+# 画像加工のために必要なImageMagick
