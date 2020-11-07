@@ -64,8 +64,8 @@ gem 'image_processing', '~> 1.2'
 gem "aws-sdk-s3", require: false
 # 画像の保存先をS3に変更するために導入
 group :production do
-  gem 'rails_12factor'
-  # gem 'unicorn', '5.4.1'
+  # gem 'rails_12factor'
+  gem 'unicorn', '5.4.1'
 end
 # アプリケーションサーバを起動するとアプリケーションサーバのプロセスが生まれます。
 # アプリケーションサーバのプロセスがあれば、リクエストを受け付けブラウザにレスポンスを返すことができます。
