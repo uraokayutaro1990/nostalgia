@@ -9,15 +9,24 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:user).sample(10)
+    #  binding.pry
     # includesメソッドを使用したためallメソッドは省略、N＋1問題解決2回のアクセスで済む
   end
-    @items = Item.includes(:user)
+    # @items = Item.includes(:user)多分間違いコード
   def new
     @item = Item.new
   end  
 
   def create
-    Item.create(item_params)
+    # Item.create(item_params)
+    #  binding.pry
+    item =Item.new(item_params)
+      # binding.pry
+    if item.save
+      redirect_to root_path 
+    else
+      render "item/new"
+    end
     #	アイテムモデル保存する
     # praivateでitem_paramsで引用してくるものを指定
   end

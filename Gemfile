@@ -60,3 +60,6 @@ gem 'image_processing', '~> 1.2'
 # mini_magickとはImageMagickの機能をRubyで扱えるようにしてくれる
 # ImageProcessing、MiniMagickでは提供できない、画像サイズを調整する機能を提供する
 # 画像加工のために必要なImageMagick
+
+gem "aws-sdk-s3", require: false
+# 画像の保存先をS3に変更するために導入
