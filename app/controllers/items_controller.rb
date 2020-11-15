@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
     item =Item.new(item_params)
       # binding.pry
     if item.save
-      redirect_to root_path 
+      redirect_to current_user 
     else
       render "item/new"
     end
@@ -34,6 +34,8 @@ class ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     item.destroy
+    redirect_to current_user 
+
   end
 
   def edit
