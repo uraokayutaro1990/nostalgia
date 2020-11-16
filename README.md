@@ -24,5 +24,6 @@
 ・ImageMagickの機能をRubyで扱えるよう:MiniMagick
 ・画像サイズの変更ImageProcessing
 ・データベース:MySQL
+・管理ツール:Github
 
 
