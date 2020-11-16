@@ -2,7 +2,7 @@
 <%# <div class="content_post" style="background-image: url(<%= image_tag(item.image.url) %>
 <%# <div class="content_post" style="background-image: url(<%= Rails.application.routes.url_helpers.url_for(item.image) if item.image.attached?  %>
     <div class="back-image"> <%= image_tag item.image.variant(resize: '350x400'), class: 'item-image' if item.image.attached? %> </div>
-                             <%# <%= image_tag item.image.variant(resize: '500x500'), class: 'item-image' if item.image.attached? %> %>
+                             <%# <%= image_tag item.image.variant(resize: '500x500'), class: 'item-image' if item.image.attached? %> 
       <%# <%= image_tag message.image, class: 'message-image' if message.image.attached? %> 
       <%# attached?メソッド レコードにファイルが添付されているかどうか モデル.ファイル名.attached? %>
         <%# image_tagメソッド img要素を生成するRailsのヘルパーメソッド  %>
@@ -36,4 +36,3 @@
         </a>
       </span>
     </div>
-

@@ -1,5 +1,5 @@
 <div class="contents row">
-  <p><%= @nickname %>さんの投稿一覧</p>
+  <h4><%= @nickname %>さんの投稿一覧</h4>
   <% @items.each do |item| %>
     <%= render partial: "items/item", locals: { item: item } %>
   <% end %>
