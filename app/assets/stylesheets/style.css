@@ -445,11 +445,11 @@ i {
   transition-timing-function: ease-in;
 }
 
-/* .button {
+.button {
   background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
   background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
-} */
+}
 
 ul {
   margin: 0;
@@ -648,16 +648,9 @@ body {
 h1,
 h2,
 h3,
-
-
 h4,
-body {
-  text-align: center;
-  color: #666;
-  font-size: 18px;
-}
-
-
+h5,
+h6,
 body {
   line-height: 1.57;
   letter-spacing: 0.15em;
@@ -665,25 +658,7 @@ body {
   color: #666;
   font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   margin: 0;
-  text-align: center;
 }
-
-h5,
-body {
-  font-size: px;
-  color: #666;
-  
-  margin: 0;
-  text-align: center;
-}
-
-
-h6,
-body {
-  margin : 50px 100px;
-  text-align: left;
-}
-
 
 a {
   text-decoration: none;
@@ -707,9 +682,9 @@ div.contents.row div.content_post p {
   font-size: 2em !important;
 }
 
-/* ::selection {
+::selection {
   background: #D8D8D8;
-} */
+}
 
 .transition,
 a,
@@ -751,7 +726,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
 }
 
 .title--big {
-  font-size: 2.5em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -847,10 +822,10 @@ header.header .user_nav ul li a {
   border-bottom: 1px solid #d8d8d8;
 }
 
-/* .form {
+.form {
   background: url(https://dl.dropboxusercontent.com/u/5840617/DeathtoStock_Wired3.jpg);
   background-size: cover;
-} */
+}
 
 .form .contents {
   position: absolute;
@@ -885,16 +860,14 @@ div.contents.row .new_user {
 
 div.contents.row div.content_post {
   margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 30px;
   position: relative;
   height: 400px;
   color: #fff;
-  /* background-size: cover;
-  background-position: center center; */
+  background-size: cover;
+  background-position: center center;
   border-radius: 3px;
-  /* box-shadow: 0 0 10px rgba(41, 41, 41, 0.2); */
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
 }
 
 div.contents.row div.content_post:after {
@@ -1091,17 +1064,4 @@ footer p {
   /* object-fit: contain; */
   /* background: cover; */
   max-height: 100%;
-}
-
- .a {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.p{
-  font-size: 1.1em;
-  line-height: 1.7em;
-  margin: 0 0 10px;
 }
